@@ -1,0 +1,18 @@
+[project]
+name = "realtime-data-streaming-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "apache-airflow>=3.0.6",
+    "apache-airflow-providers-docker>=4.4.2",
+    "kafka-python>=2.2.15",
+    "psycopg2-binary>=2.9.10",
+    "requests>=2.32.5",
+]
+
+[tool.uv.workspace]
+members = [
+    "api-request",
+]
