@@ -9,17 +9,23 @@ sys.path.append('/opt/airflow/api-request/src')
 def safe_callable():
     try:
         from user_data_api import stream_data
-        return stream_data()
+        result = stream_data()
+        print(f"Task completed successfully: {result}")
+        return result
     except Exception as e:
-        print(f"Error in safe_callable: {str(e)}")
-        raise e
+        error_msg = f"Task failed in safe_callable: {str(e)}"
+        print(error_msg)
+        # Re-raise so Airflow knows the task failed
+        raise Exception(error_msg)
 
 default_args = {
     'owner': 'airscholar', 
     'start_date': datetime(2025, 10, 4), 
     'catchup': False,
-    'retries': 1,
-    'retry_delay': timedelta(minutes=5),
+    'retries': 2,  # Increased retries
+    'retry_delay': timedelta(minutes=2),  # Shorter retry delay
+    'retry_exponential_backoff': True,  # Exponential backoff for retries
+    'max_retry_delay': timedelta(minutes=10),  # Maximum retry delay
 }
 
 dag = DAG(
@@ -30,7 +36,12 @@ dag = DAG(
 )
 
 with dag:
-    task_1 = PythonOperator(
+    
+    # Main streaming task
+    stream_task = PythonOperator(
         task_id="stream_user_data_from_api",
         python_callable=safe_callable,
     )
+    
+    # Set task dependencies
+    stream_task
