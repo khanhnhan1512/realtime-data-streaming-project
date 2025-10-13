@@ -59,7 +59,7 @@ x-airflow-common:
     AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
     AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
     AIRFLOW__CORE__FERNET_KEY: ''
-    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'false'
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__CORE__EXECUTION_API_SERVER_URL: 'http://airflow-apiserver:8080/execution/'
     # yamllint disable rule:line-length
@@ -88,6 +88,8 @@ x-airflow-common:
       condition: service_healthy
     postgres:
       condition: service_healthy
+    airflow-base:
+      condition: service_completed_successfully
 
 services:
   postgres:
@@ -120,6 +122,14 @@ services:
       retries: 50
       start_period: 30s
     restart: always
+
+  airflow-base:
+    build:
+      context: .
+      dockerfile: ./airflow/Dockerfile
+    image: custom-airflow:latest
+    container_name: airflow-base
+    command: version
 
   airflow-apiserver:
     <<: *airflow-common

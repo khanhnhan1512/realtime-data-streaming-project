@@ -31,7 +31,7 @@ default_args = {
 dag = DAG(
     dag_id='user_data_kafka_stream',
     default_args=default_args,
-    schedule=timedelta(minutes=30),
+    schedule=timedelta(minutes=60),
     description='A DAG to stream user data to Kafka',
 )
 

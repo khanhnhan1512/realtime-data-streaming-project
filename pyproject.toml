@@ -7,9 +7,12 @@ requires-python = ">=3.11"
 dependencies = [
     "apache-airflow>=3.0.6",
     "apache-airflow-providers-docker>=4.4.2",
+    "cassandra-driver>=3.29.2",
     "kafka-python>=2.2.15",
     "psycopg2-binary>=2.9.10",
+    "pyspark==3.5.1",
     "requests>=2.32.5",
+    "spark>=0.2.1",
 ]
 
 [tool.uv.workspace]
