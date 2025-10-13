@@ -1,1 +1,4 @@
-# realtime-data-streaming-project
+# Realtime Data Streaming Pipeline
+
+### Pipeline Architecture
+![Pipeline Architecture](./images/pipeline-architecture.svg)
