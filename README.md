@@ -127,7 +127,16 @@ To run this project, you need:
     docker-compose -f docker-compose.airflow3.yaml up -d  # wait about 20s to start Airflow
     docker-compose -f docker-compose.spark.yaml up -d  # start Spark
     ```
-5. Stop the entire pipeline:
+5. Submit Spark job:
+    ```bash
+    docker exec spark-master /opt/spark/bin/spark-submit \
+    --master spark://spark-master:7077 \
+    --conf "spark.sql.adaptive.enabled=false" \
+    --conf "spark.jars.ivy=/tmp/.ivy2" \
+    --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.1,com.datastax.spark:spark-cassandra-connector_2.12:3.5.0 \
+    /opt/spark/apps/spark_stream.py
+    ```
+6. Stop the entire pipeline:
     ```bash
     ./stop-pipeline.sh
     ```
