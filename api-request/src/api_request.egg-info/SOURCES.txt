@@ -5,4 +5,5 @@ src/user_data_api.py
 src/api_request.egg-info/PKG-INFO
 src/api_request.egg-info/SOURCES.txt
 src/api_request.egg-info/dependency_links.txt
+src/api_request.egg-info/requires.txt
 src/api_request.egg-info/top_level.txt
