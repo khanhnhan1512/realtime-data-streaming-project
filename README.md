@@ -147,6 +147,7 @@ To run this project, you need:
 - Spark Web UI: [http://localhost:9090](http://localhost:9090)
 
 # ✉️ Contact
-If you have any questions or suggestions, feel free to reach out to me at:
+Feel free to connect with me on the following platforms:
 - Email: khanhnhan012@gmail.com
-- LinkedIn: [nhan-nguyen-b22023260](https://www.linkedin.com/in/nhan-nguyen-b22023260/)
+- [![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/nguyen.khanh.nhan.905779)
+- [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nhan-nguyen-b22023260/)
