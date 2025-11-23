@@ -145,3 +145,8 @@ To run this project, you need:
 - Kafka Control Center: [http://localhost:9021](http://localhost:9021)
 - Airflow Web UI: [http://localhost:8081](http://localhost:8081) (username and password are configured in `.env` file, default is admin/admin)
 - Spark Web UI: [http://localhost:9090](http://localhost:9090)
+
+# ✉️ Contact
+If you have any questions or suggestions, feel free to reach out to me at:
+- Email: khanhnhan012@gmail.com
+- LinkedIn: [nhan-nguyen-b22023260](https://www.linkedin.com/in/nhan-nguyen-b22023260/)

@@ -141,3 +141,8 @@ Pipeline này được xây dựng nhằm mục đích học tập và làm quen
 - Control Center của Kafka: [http://localhost:9021](http://localhost:9021)
 - Giao diện web của Airflow: [http://localhost:8081](http://localhost:8081) (username và password được cấu hình trong file `.env`, mặc định là admin/admin)
 - Giao diện web của Spark: [http://localhost:9090](http://localhost:9090)
+
+# ✉️ Liên hệ
+Nếu bạn có bất kỳ câu hỏi hoặc góp ý nào, hãy liên hệ với tôi qua:
+- Email: khanhnhan012@gmail.com
+- LinkedIn: [nhan-nguyen-b22023260](https://www.linkedin.com/in/nhan-nguyen-b22023260/)
